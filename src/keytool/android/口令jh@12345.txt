@@ -1,0 +1,4 @@
+keytool -genkey -alias com.jinghe.jmc -keyalg RSA -keysize 2048 -validity 36500 -keystore com.jinghe.jmc.keystore
+
+
+keytool -list -v -keystore com.jinghe.jmc.keystore
