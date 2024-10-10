@@ -1,0 +1,56 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	// font-size: 12px;
+}
+body {
+	// background-image: url('~@/static/watermark.png');
+}
+img {
+	display: block;
+}
+uni-page-body{
+	height: 100%;
+}
+.uni-body {
+	background-color: #F2F3F5;
+	height: 100%;
+}
+// 超出隐藏
+.ellipsis {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.ellipsis2 {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.info-color {
+	color: #82848a;
+}
+.primary-color {
+	color: #00B42A;
+}
+.warning-color {
+	color: #ff9900;
+}
+.success-color {
+	color: #1690FF;
+}
+.error-color {
+	color: #F53F3F;
+}
+
+.navigator-hover{
+	opacity: 1;
+	background-color: rgba(0,0,0,0);
+}
