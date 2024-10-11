@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       viewProps: {
-        src: '',
+        src: 'http://127.0.0.1:8080/runtime/vue3/page/index.html',
       },
     }
   },
@@ -17,7 +17,7 @@ export default {
         title: params.title,
       })
     }
-    this.viewProps = params
+    // this.viewProps = params
   },
 }
 </script>

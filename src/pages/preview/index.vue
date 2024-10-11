@@ -32,7 +32,7 @@
 				</view>
 			</view>
 			<view class="pop-cont">
-				<iframe :src="webObj.src" frameborder="o" width="100%" height="100%"></iframe>
+				<iframe src="http://127.0.0.1:8080/runtime/vue3/page/index.html" frameborder="o" width="100%" height="100%"></iframe>
 			</view>
 		</view>
 	</view>

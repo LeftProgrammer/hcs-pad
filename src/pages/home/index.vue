@@ -5,16 +5,18 @@
 	  
 	  <!-- Navigation Bar Component -->
 	  <home-navbar ref="homeNavbar" :menuList="menuList" @changeMenu="handleChangeMenu"></home-navbar>
-	  
+	  <view style="margin-top: 120px; height: 70%;">
+		<!-- <iframe src="http://127.0.0.1:8080/runtime/vue3/page/index.html" frameborder="0" width="100%" height="100%"></iframe> -->
+		<web-view class="h-full" src="http://127.0.0.1:8080/runtime/vue3/page/index.html"></web-view>
+	</view>
+	  <!-- <web-view class="h-full" src="http://127.0.0.1:8080/runtime/vue3/page/index.html"></web-view> -->
 	  <!-- Dynamic Content Components -->
-	  <home-content v-show="showComponent === 'HomeContent'" :scrollTop="scrollTop" :currentMenuId="currentMenuId"></home-content>
-	  <sub-content v-show="showComponent === 'SubContent'" :currentMenuId="currentMenuId"></sub-content>
+	  <!-- <home-content v-show="showComponent === 'HomeContent'" :scrollTop="scrollTop" :currentMenuId="currentMenuId"></home-content> -->
 	</view>
   </template>
   
   <script>
   import HomeNavbar from "@/components/homeNavbar/index.vue";
-  import SubContent from "@/components/subContent/index.vue";
   import HomeContent from "@/components/homeContent/index.vue";
   import { handleGetMenuList, getAllFileList, getNetworkStatus } from '@/utils/utils/index';
   
@@ -22,7 +24,6 @@
 	components: {
 	  HomeNavbar,
 	  HomeContent,
-	  SubContent
 	},
 	data() {
 	  return {
@@ -92,7 +93,6 @@
   .home-page {
 	position: relative;
 	height: 100vh;
-	background-color: #1690FF;
   }
   </style>
   

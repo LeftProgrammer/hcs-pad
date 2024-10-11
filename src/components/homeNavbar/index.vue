@@ -3,12 +3,13 @@
 		<uv-navbar :fixed="false" :safeAreaInsetTop="false" height="32rpx" bgColor="#1690FF">
 			<template v-slot:left>
 				<view class="nav-left">
-					<image class="logo" src="@/static/home/home_logo.png"></image>
+					<!-- <image class="logo" src="@/static/home/home_logo.png"></image> -->
 				</view>
 			</template>
 			<template v-slot:center>
 				<view class="nav-center">
-					<uv-tabs :list="menuList" keyName="name" @change="tabChange" bgColor="#1690FF" :inactiveStyle="{color: '#fff'}" :activeStyle="{color: 'fff', fontWeight: 'bold'}" lineColor="#fff" lineWidth="45"></uv-tabs>
+					头部
+					<!-- <uv-tabs :list="menuList" keyName="name" @change="tabChange" bgColor="#1690FF" :inactiveStyle="{color: '#fff'}" :activeStyle="{color: 'fff', fontWeight: 'bold'}" lineColor="#fff" lineWidth="45"></uv-tabs> -->
 				</view>
 			</template>
 			<template v-slot:right>
