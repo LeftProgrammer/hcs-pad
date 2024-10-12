@@ -19,7 +19,6 @@
       "aliasPath": "/login",
       "style": {}
     },
-   
     {
       "path": "pages/mine/index",
       "aliasPath": "/mine",

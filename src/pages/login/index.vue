@@ -3,7 +3,7 @@
     <view class="login-main">
       <image class="login-logo" src="/static/logo2x2.png" alt=""></image>
       <view class="login-title">
-        欢迎使用鲸禾JMC
+        欢迎使用
       </view>
       <view class="login-form">
         <uv-form labelPosition="top" :model="form" :rules="rules" ref="form">
@@ -135,136 +135,6 @@ export default {
       else {
         this.$Router.replaceAll('/')
       }
-    },
-    // 检查支持的认证方式
-    checkIsSupportSoterAuthentication() {
-      uni.checkIsSupportSoterAuthentication({
-        success: (res) => {
-          // res.supportMode = ['fingerPrint', 'facial'] // 支持指纹识别和人脸识别
-          // uni.showModal({
-          // 	content: '支持的认证方式：' + res.supportMode,
-          // 	showCancel: false
-          // });
-          if (res.supportMode.includes('fingerPrint')) {
-            this.isFinger = true
-          }
-          if (res.supportMode.includes('facial')) {
-            this.isFace = true
-          }
-        },
-        fail() {
-        },
-      })
-    },
-    // 检查是否录入指纹
-    checkIsSoterEnrolledInDeviceFingerPrint() {
-      uni.checkIsSoterEnrolledInDevice({
-        checkAuthMode: 'fingerPrint',
-        success: (res) => {
-          if (res.isEnrolled) {
-            // uni.showToast({
-            // 	icon: 'none',
-            // 	title: '已录入指纹'
-            // });
-            this.startSoterAuthenticationFingerPrint()
-          }
-          else {
-            uni.showModal({
-              content: '未录入指纹',
-              showCancel: false,
-            })
-          }
-        },
-        fail() {
-          uni.showModal({
-            content: '未录入指纹',
-            showCancel: false,
-          })
-        },
-      })
-    },
-    // 检查是否录入FaceID
-    checkIsSoterEnrolledInDeviceFaceID() {
-      uni.checkIsSoterEnrolledInDevice({
-        checkAuthMode: 'facial',
-        success(res) {
-          alert(`检查是否录入FaceID${res.isEnrolled}`)
-          if (res.isEnrolled) {
-            // uni.showToast({
-            // 	icon: 'none',
-            // 	title: '已录入FaceID'
-            // });
-            this.startSoterAuthenticationFaceID()
-          }
-          else {
-            uni.showModal({
-              content: '未录入FaceID',
-              showCancel: false,
-            })
-          }
-        },
-        fail() {
-          uni.showModal({
-            content: '未录入FaceID',
-            showCancel: false,
-          })
-        },
-      })
-    },
-    // 开始指纹认证
-    startSoterAuthenticationFingerPrint() {
-      uni.startSoterAuthentication({
-        requestAuthModes: ['fingerPrint'],
-        challenge: '123456',
-        authContent: '请用指纹解锁',
-        success: () => {
-          // uni.showToast({
-          // 	icon: 'none',
-          // 	title: '指纹验证成功'
-          // });
-          // TODO: ？？？
-          // this.form.username = {
-          // 	username: this.username,
-          // 	password: this.password
-          // }
-          this.handleLogin()
-        },
-        fail(err) {
-          uni.showModal({
-            content: `指纹验证失败，errCode：${err.errCode}`,
-            showCancel: false,
-          })
-          // console.log(err);
-        },
-      })
-    },
-    // 开始FaceID认证
-    startSoterAuthenticationFaceID() {
-      uni.startSoterAuthentication({
-        requestAuthModes: ['facial'],
-        challenge: '123456',
-        authContent: '请用FaceID解锁',
-        success: () => {
-          // uni.showToast({
-          // 	icon: 'none',
-          // 	title: 'FaceID验证成功'
-          // });
-
-          // TODO: ？？？
-          // this.form.username = {
-          // 	username: this.username,
-          // 	password: this.password
-          // }
-          this.handleLogin()
-        },
-        fail(err) {
-          uni.showModal({
-            content: `FaceID验证失败，errCode：${err.errCode}`,
-            showCancel: false,
-          })
-          // console.log(err);
-        },
-      })
     },
   },
 }

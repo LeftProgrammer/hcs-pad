@@ -68,18 +68,6 @@ export default {
 		onErrorImag() {
 			this.imgSuccess = false
 		},
-		// 点击搜索
-		goSearch() {
-			uni.navigateTo({
-				url: '/pages/search/index'
-			})
-		},
-		// 点击下载
-		goDownload() {
-			uni.navigateTo({
-				url: '/pages/download/index'
-			})
-		},
 		// 我的
 		goMine() {
 			uni.navigateTo({

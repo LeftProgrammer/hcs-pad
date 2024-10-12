@@ -28,22 +28,6 @@ export default defineUniPages({
       aliasPath: '/login'
     },
     {
-      path: "pages/search/index",
-      aliasPath: "/search",
-      style: {
-        navigationBarBackgroundColor: "#3478f6",
-        enablePullDownRefresh: false
-      }
-    },
-    {
-      path: "pages/download/index",
-      aliasPath: "/download",
-      style: {
-        navigationBarBackgroundColor: "#3478f6",
-        enablePullDownRefresh: false
-      }
-    },
-    {
       path: "pages/mine/index",
       aliasPath: "/mine",
       style: {
