@@ -1,13 +1,13 @@
 <template>
   <view class="login-page">
     <view class="login-main">
-      <image class="login-logo" src="/static/logo2x2.png" alt=""></image>
+      <!-- <image class="login-logo" src="/static/logo2x2.png" alt=""></image> -->
       <view class="login-title">
-        欢迎使用
+        欢迎使用智慧展厅系统
       </view>
       <view class="login-form">
         <uv-form labelPosition="top" :model="form" :rules="rules" ref="form">
-          <uv-form-item label="用户名" prop="username" borderBottom :labelWidth="100">
+          <uv-form-item label="账号" prop="username" borderBottom :labelWidth="100">
             <uv-input v-model="form.username" clearable placeholder="输入用户名" border="none">
             </uv-input>
           </uv-form-item>
@@ -26,16 +26,6 @@
         </uv-form>
       </view>
       <uv-button class="login-btn" type="primary" @click="handleLogin" text="登 录"></uv-button>
-      <!-- #ifdef APP-PLUS -->
-      <view class="form-footer">
-        <button
-          v-if="isFinger" class="form-footer-login2"
-          @tap="checkIsSoterEnrolledInDeviceFingerPrint"
-        >
-          指纹识别登录
-        </button>
-      </view>
-      <!-- #endif -->
     </view>
     
     <!-- #ifdef APP-PLUS -->
@@ -71,21 +61,12 @@ export default {
               // { pattern: /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[~!@#$%^&*])[\da-zA-Z~!@#$%^&*]{8,16}$/ , message: '密码由数字、字母和特殊符号组成，长度8-16位', trigger: ['blur', 'change']}
           ],
       },
-      isFinger: false, // 设备是否支持指纹识别
-      isFace: false, // 设备是否支持人脸识别
     }
   },
   computed: {
     userStore() {
       return store.useUserStore() || {}
     }
-  },
-  onShow() {
-    // #ifdef APP-PLUS
-    plus.runtime.getProperty(plus.runtime.appid, (wgtinfo) => {
-      this.nowVersion = wgtinfo.version
-    });
-    // #endif
   },
   onLoad() {
     console.error('login-onLoad===>')

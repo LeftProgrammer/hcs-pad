@@ -9,15 +9,22 @@
   },
   "pages": [
     {
-      "path": "pages/home/index",
+      "path": "pages/webview/index",
       "aliasPath": "/",
-      "style": {},
-      "type": "home"
+      "style": {}
     },
     {
       "path": "pages/login/index",
       "aliasPath": "/login",
       "style": {}
+    },
+    {
+      "path": "pages/test/index",
+      "aliasPath": "/test",
+      "style": {
+        "navigationBarBackgroundColor": "#3478f6",
+        "enablePullDownRefresh": false
+      }
     },
     {
       "path": "pages/mine/index",
@@ -48,20 +55,6 @@
       }
     }
   ],
-  "subPackages": [
-    {
-      "root": "pages/webview",
-      "pages": [
-        {
-          "path": "index",
-          "aliasPath": "/webview",
-          "style": {
-            "navigationBarTitleText": "webview"
-          }
-        }
-      ]
-    }
-  ],
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "JMC",
@@ -72,5 +65,6 @@
     "rpxCalcMaxDeviceWidth": 2560,
     "rpxCalcBaseDeviceWidth": 750,
     "rpxCalcIncludeWidth": 750
-  }
+  },
+  "subPackages": []
 }

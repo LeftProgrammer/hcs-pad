@@ -73,6 +73,8 @@
                 <!-- <uv-button type="primary" text="清除缓存" @click="handleClear"></uv-button> -->
                 <!-- <uv-button type="primary" text="一键刷新" @click="handleRefresh"></uv-button> -->
                 <uv-button type="error" text="退出登录" @click="handleLogout"></uv-button>
+
+                <uv-button type="primary" text="完成设置并返回 H5" @click="completeSettings"></uv-button> 
             </view>
         </view>
 
@@ -256,6 +258,20 @@
                 //         plus.nativeUI.toast('退出失败');
                 //     }
                 // })
+            },
+
+            completeSettings() {
+                // 模拟设置完成后的数据
+                
+                // 返回上一页
+                // uni.navigateBack();
+                uni.navigateTo({
+                    url: '/pages/webview/index?flag=1', // 跳转到设置页面
+                    success: () => {
+                        console.log('已跳转到设置页面');
+                        
+                    }
+                });
             }
 		}
 	}

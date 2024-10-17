@@ -20,12 +20,20 @@ export default defineUniPages({
   },
   pages: [
     {
-      path: "pages/home/index",
+      path: "pages/webview/index",
       aliasPath: "/"
     },
     {
       path: 'pages/login/index',
       aliasPath: '/login'
+    },
+    {
+      path: "pages/test/index",
+      aliasPath: "/test",
+      style: {
+        navigationBarBackgroundColor: "#3478f6",
+        enablePullDownRefresh: false
+      }
     },
     {
       path: "pages/mine/index",
@@ -55,20 +63,20 @@ export default defineUniPages({
       }
     }
   ],
-  subPackages: [
-    {
-      root: 'pages/webview',
-      pages: [
-        {
-          path: 'index',
-          aliasPath: '/webview',
-          style: {
-            navigationBarTitleText: 'webview',
-          },
-        },
-      ],
-    },
-  ],
+  // subPackages: [
+  //   {
+  //     root: 'pages/webview',
+  //     pages: [
+  //       {
+  //         path: 'index',
+  //         aliasPath: '/webview',
+  //         style: {
+  //           navigationBarTitleText: 'webview',
+  //         },
+  //       },
+  //     ],
+  //   },
+  // ],
   globalStyle: {
     navigationBarTextStyle: "white",
     navigationBarTitleText: "JMC",
